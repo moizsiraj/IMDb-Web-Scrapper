@@ -66,7 +66,7 @@ with open('MovieDetails.csv', mode='w', newline='') as csvFile:
                     for val in item.findAll('a'):
                         if val.text == 'See full cast & crew':
                             break
-                        stars = stars + ", " + val.text
+                        stars = stars + val.text + ", "
                     stars = stars.strip()
                     print(stars)
 
@@ -77,7 +77,7 @@ with open('MovieDetails.csv', mode='w', newline='') as csvFile:
                 if item.h4.text == 'Directors:' or item.h4.text == 'Director:':
                     directors = ''
                     for val in item.findAll('a'):
-                        directors = directors + ", " + val.text
+                        directors = directors + val.text + ", "
                     directors = directors.strip()
                     print(directors)
 
